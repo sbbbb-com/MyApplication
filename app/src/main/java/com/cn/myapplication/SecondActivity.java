@@ -24,5 +24,14 @@ public class SecondActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button but_third=findViewById(R.id.third_start);
+        but_third.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(SecondActivity.this,ThirdActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -17,7 +17,14 @@
         </activity>
 
         <activity android:name=".SecondActivity"
-            android:launchMode="singleTop">
+            android:label="这是第二个activity"
+            android:launchMode="singleTop"
+            >
+        </activity>
+
+        <activity android:name=".ThirdActivity"
+            android:label="这是第三个activity">
+
         </activity>
     </application>
 </manifest>

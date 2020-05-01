@@ -3,21 +3,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/start_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="启动"
-        android:textSize="50px"/>
-
-    <Button
-        android:id="@+id/main_finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="退出"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="main"/>
+        android:text="这是第三个activity"/>
+
+    <Button
+        android:id="@+id/third_shut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭第三个退出"/>
+
+    <Button
+        android:id="@+id/third_start_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动第二个activity"/>
+
 </LinearLayout>

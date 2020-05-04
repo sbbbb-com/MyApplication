@@ -5,10 +5,10 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.cn.app2"
-        minSdkVersion 25
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion 15  //最低兼容Android版本15 --》4.0
+        targetSdkVersion 29   //最高测试版本
+        versionCode 1          //指定项目版本号
+        versionName "1.0"       //指定项目版本名
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/zhanghao"
+        android:hint="QQ号/微信号/Email"
+        android:paddingBottom="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/mima"
+        android:hint="密码"
+        android:password="true"
+        android:paddingBottom="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF009688"
+        android:text="登录"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:text="登录遇到问题?" />
+</LinearLayout>

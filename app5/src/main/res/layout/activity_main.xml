@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:background="#00f"
+       >
+
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@mipmap/arrow_right"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="1dp"/>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:textSize="35px"
+         android:text="3B账号登录"/>
+
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:text="注册"
+          android:textSize="35px"
+          android:background="@null"
+          android:textColor="#fff"
+         />
+
+   </RelativeLayout>
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+       android:orientation="vertical">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="账号"/>
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:hint="请输入你的3B账号"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:orientation="horizontal">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="密码"/>
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:hint="请输入您的密码" />
+      </LinearLayout>
+
+   </LinearLayout>
+
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="登录"
+       android:layout_marginRight="20dp"
+       android:layout_marginTop="70dp"
+       android:layout_marginLeft="20dp"
+       />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

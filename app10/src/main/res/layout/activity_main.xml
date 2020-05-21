@@ -89,8 +89,8 @@
             android:background="#ACD6FF"
             android:text="删除" />
     </LinearLayout>
-    <TextView
-        android:id="@+id/tv_show"
+    <ListView
+        android:id="@+id/lv_show"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"

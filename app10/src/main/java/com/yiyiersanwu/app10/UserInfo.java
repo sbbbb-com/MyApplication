@@ -1,17 +1,29 @@
 package com.yiyiersanwu.app10;
 
+import java.util.zip.Deflater;
+
 public class UserInfo {
     private int id;
     private String name;
     private String phone;
+    private Boolean isChecked;
+
+    public Boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(Boolean checked) {
+        this.isChecked = checked;
+    }
 
     public UserInfo() {
     }
 
-    public UserInfo(int id, String name, String phone) {
+    public UserInfo(int id, String name, String phone,Boolean isChecked) {
         this.id = id;
         this.name = name;
         this.phone = phone;
+
     }
 
     @Override
@@ -20,8 +32,10 @@ public class UserInfo {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
+                ", isChecked=" + isChecked +
                 '}';
     }
+
 
     public int getId() {
         return id;

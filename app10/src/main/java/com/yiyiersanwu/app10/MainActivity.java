@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,9 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnQuery;
     private Button btnUpdate;
     private Button btnDelete;
-    private TextView tvShow;
+    private ListView lvShow;
 
     List<UserInfo> uis=null;
+    //适配器的声明
+    ListViewAdapter adapter=null;
 
     /**
      * Find the Views in the layout<br />
@@ -51,12 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnQuery = (Button)findViewById( R.id.btn_query );
         btnUpdate = (Button)findViewById( R.id.btn_update );
         btnDelete = (Button)findViewById( R.id.btn_delete );
-        tvShow = (TextView)findViewById( R.id.tv_show );
+        lvShow = (ListView)findViewById( R.id.lv_show );
 
         btnAdd.setOnClickListener( this );
         btnQuery.setOnClickListener( this);
         btnUpdate.setOnClickListener( this );
         btnDelete.setOnClickListener( this );
+
     }
 
     /**
@@ -67,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onClick(View v) {
+
         if ( v == btnAdd ) {
             // Handle clicks for btnAdd
             db=myHelper.getWritableDatabase();
@@ -75,11 +80,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             values.put("name",etName.getText().toString());
             values.put("phone",etPhone.getText().toString());
             //通过对象的方式来操作数据。
-
             db.insert("information",null,values);
             db.close();
 
             Toast.makeText(this, "添加数据成功", Toast.LENGTH_SHORT).show();
+            //执行查询操作
+            btnQuery.callOnClick();
 
         } else if ( v == btnQuery ) {
             // Handle clicks for btnQuery
@@ -101,16 +107,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     userInfo.setPhone(cursor.getString(2));
                     //将对象放到集合中
                     uis.add(userInfo);
-
                 }
-
-                Toast.makeText(this, "查找记录"+uis.toString()+"=="+uis.size(), Toast.LENGTH_SHORT).show();
             }
+
+            db.close();
+            adapter=new ListViewAdapter(MainActivity.this,uis);
+            //设置适配器
+            lvShow.setAdapter(adapter);
 
         } else if ( v == btnUpdate ) {
             // Handle clicks for btnUpdate
         } else if ( v == btnDelete ) {
-            // Handle clicks for btnDelete
+            // 删除选中的记录
+            db=myHelper.getWritableDatabase();
+            for (int i = 0; i <uis.size() ; i++) {
+                UserInfo ui = uis.get(i);
+                //判断当前ui对象中的属性值 ischecked 符合条件删除
+                if (ui.isChecked()!=null){
+                    db.delete("information","_id=?",new String[]{ui.getId()+""});
+                }
+            }
+
+            db.close();
+            //执行查询按钮  按下按钮callOnClick  自动更新
+            btnQuery.callOnClick();
+            Toast.makeText(this, "删除成功", Toast.LENGTH_SHORT).show();
         }
     }
 

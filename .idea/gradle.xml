@@ -10,7 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app10" />
+            <option value="$PROJECT_DIR$/app11" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

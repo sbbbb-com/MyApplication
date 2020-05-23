@@ -21,7 +21,6 @@ public class OutCallReceiver extends BroadcastReceiver {
         String number = sp.getString("number", "-1");
 
         //判断
-        //防止空值异常
         if (outcallnumber!=null)
         if (outcallnumber.equals(number)){
             //拦截电话
